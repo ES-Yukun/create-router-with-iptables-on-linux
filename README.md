@@ -1,23 +1,23 @@
 # create-router-with-iptables-on-linux
 
-___***INTRO***___\n
-***YOU NEED TO LEARN IPTABLES***\n
-***Right NOW!!***\n
+___***INTRO***___  
+***YOU NEED TO LEARN IPTABLES***  
+***Right NOW!!***  
 But why?...
 Well iptables can create router with one command!!
 
 In this thread I'm going to teach you ,how to create ***ROUTER*** using iptables and how to do to portforward on it.
 
-___***What is IPTABLES?***___
+___***What is IPTABLES?***___  
 ***IPTABLES*** is a packet filters installed in general Linux.
 ***IPTABLES*** is a very sophisticated and high-performance packet filter comparable to commercial products.
 In addition to protecting the server itself, it also supports packet forwarding.
 So it can be used as a network firewall by running on a machine equipped with two network adapters to control packet forwarding.
 🙌 Thank you for using it for free!
 
-___***・First Step***___
-This thread uses <:ubuntu:942695210847195176> ubuntu as an example. 
-However, ***IPTABLES*** is a <:linux:942698642429603880>Linux feature, so it works exactly the same way on other Distributions.
+___***・First Step***___  
+This thread uses ubuntu as an example. 
+However, ***IPTABLES*** is a Linux feature, so it works exactly the same way on other Distributions.
 
 Need to allow *forward* of ipv4.(If you want to use ipv6 too, you need check out it too.)
 ```bash
@@ -29,7 +29,7 @@ Install a package to permanently store iptables data.
 sudo apt install iptables-persistent -y
 ```
 
-___***・Second Step***___
+___***・Second Step***___  
 Configure router settings.
 This is very easy and takes only one line. 
 ```bash
@@ -45,7 +45,7 @@ So, we will now make it permanent.
 sudo bash -c "iptables-save > /etc/iptables/rules.v4"
 ```
 
-___***・Finally***___
+___***・Finally***___  
 This step describes port-forwarding.
 ```bash
 # Example: forward 80 to 192.168.20.101:8080
@@ -55,7 +55,7 @@ sudo bash -c "iptables-save > /etc/iptables/rules.v4"
 **A:** This means to target the port for communication from other than 192.168.20.0/24.If this is not stated, port 80 will internally loop back to port 8080.
 
 
-___***・Issue***___
+___***・Issue***___  
 In rare cases, when you try to browse a particular website, you may not be able to do so. 
 That is because the **MTU** is not an accurate value.
 You can correct the **MTU** with the following command.
