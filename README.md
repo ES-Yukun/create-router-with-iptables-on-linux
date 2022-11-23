@@ -64,4 +64,4 @@ sudo iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to
 sudo bash -c "iptables-save > /etc/iptables/rules.v4"
 ```
 
-Thank you for read my docs!
+Thank you for reading
